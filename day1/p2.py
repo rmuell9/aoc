@@ -9,7 +9,7 @@ with open("assets/submit.txt", "r", encoding="utf-8") as f:
 
 loc, res = 50, 0
 
-# This is not functional its just mimic a clock!
+# This is not functional its just to mimic a clock!
 
 for rotation in raw_text:
     x = abs(rotate(rotation))
