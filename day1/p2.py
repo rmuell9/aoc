@@ -5,7 +5,7 @@ def rotate(x):
 
 
 with open("assets/submit.txt", "r", encoding="utf-8") as f:
-    raw_text = f.read().split("\n")
+    raw_text = f.read().splitlines()
 
 loc, res = 50, 0
 

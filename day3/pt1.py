@@ -1,5 +1,5 @@
 with open("assets/submit.txt", "r", encoding="utf-8") as f:
-    raw_text = f.read().split("\n")[:-1]
+    raw_text = f.read().splitlines()
 
 res = int()
 for bank in raw_text:
