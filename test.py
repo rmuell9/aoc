@@ -1,3 +1,9 @@
-l = [2, 2]
-print(len(l))
-print(l.count(l[0]))
+l = "234234234234278"
+a = list()
+
+while len(a) != 12:
+    w = len(l) - (11 - len(a))
+    a.append(max(l[:w]))
+    l = l[l.index(max(l[:w]))+1:]
+
+print(a)
