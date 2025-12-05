@@ -3,5 +3,5 @@
 [Advent of Code](https://www.adventofcode.com)
 
 Languages used:
-
 - Python
+- Go
