@@ -13,7 +13,9 @@ for j in range(len(rows[0])):
         if ops[j] == "+":
             add += int(rows[i][j])
         else:
-            # In case we get a column with all ones
+            if int(rows[i][j]) == 0:
+                mul = 0
+                break
             if mul == 0:
                 mul = 1
             mul *= int(rows[i][j])
