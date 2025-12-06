@@ -18,7 +18,6 @@ for j in range(len(rows[0])):
                 mul = 1
             mul *= int(rows[i][j])
 
-    res += add
-    res += mul
+    res += add + mul
 
 print(res)

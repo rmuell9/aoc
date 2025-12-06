@@ -8,7 +8,7 @@ for i in range(len(raw_text[0])-1, -1, -1):
     for row in raw_text:
         try:
             ref += row[i]
-        except:
+        except IndexError:
             ref += " "
 
 ref = ref.split(" ")
