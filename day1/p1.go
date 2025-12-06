@@ -19,6 +19,7 @@ func main() {
 
 	var pos = 50
 	var res int
+
 	for _, line := range lines {
 		if line == "" {
 			continue

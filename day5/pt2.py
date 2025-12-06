@@ -1,13 +1,12 @@
-with open("assets/test.txt", "r", encoding="utf-8") as f:
+with open("assets/submit.txt", "r", encoding="utf-8") as f:
     raw_text = f.read().split("\n\n")
     ranges = raw_text[0].splitlines()
 
-for item in ranges:
-    bounds = item.split("-")
-    ranges[ranges.index(item)] = [int(bounds[0]), int(bounds[1])]
+for i in range(len(ranges)):
+    bounds = ranges[i].split("-")
+    ranges[i] = [int(bounds[0]), int(bounds[1])]
 
 ranges.sort()
-print(ranges)
 intersect = [ranges[0]]
 
 # Merge intersecting intervals
@@ -18,7 +17,6 @@ for i in range(1, len(ranges)):
         last[1] = max(last[1], curr[1])
     else:
         intersect.append(curr)
-print(intersect)
 
 res = int()
 for item in intersect:
