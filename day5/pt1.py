@@ -1,16 +1,13 @@
 with open("assets/submit.txt", "r", encoding="utf-8") as f:
     raw_text = f.read().split("\n\n")
-    ranges = raw_text[0].splitlines()
-    tests = raw_text[1].splitlines()
+    ranges = [(int(low), int(high)) for (low, high) in
+              [range.split("-") for range in raw_text[0].splitlines()]]
+    tests = [int(test) for test in raw_text[1].splitlines()]
 
-inrange = list()
-for item in ranges:
-    bounds = item.split("-")
-
+inrange = set()
+for low, high in ranges:
     for test in tests:
-        if int(test) >= int(bounds[0]) and\
-                int(test) <= int(bounds[1]) and\
-                test not in inrange:
-            inrange.append(test)
+        if low <= test <= high:
+            inrange.add(test)
 
 print(len(inrange))
